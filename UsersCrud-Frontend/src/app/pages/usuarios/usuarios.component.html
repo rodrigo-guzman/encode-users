@@ -1,0 +1,83 @@
+<div class="container">
+    <h2>Usuarios</h2>
+    <div class="row mt-5">
+        <div class="col-md-2">
+            <label for="txtId" class="from-label">ID</label>
+            <input type="text" name="id" id="txtId" class="form-control" [(ngModel)]="usuario.id" disabled="true">
+        </div>
+        <div class="col-md-4">
+            <label for="txtNombre" class="from-label">Nombre</label>
+            <input type="text" name="id" id="txtNombre" class="form-control" [(ngModel)]="usuario.nombre">
+        </div>
+        <div class="col-md-2">
+            <label for="txtEdad" class="from-label">Apellido</label>
+            <input type="text" name="id" id="txtEdad" class="form-control" [(ngModel)]="usuario.apelido">
+        </div>
+        <div class="col-md-4">
+            <label for="txtDesc" class="from-label">Email</label>
+            <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="usuario.email">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <label for="txtFechaNacimiento" class="from-label">Fecha Nacimiento</label>
+            <input type="text" name="id" id="txtFechaNacimiento" class="form-control" placeholder="aaaa-mm-dd"
+                [(ngModel)]="usuario.fechaNacimiento">
+        </div>
+        <div class="col-md-3">
+            <label for="txtTelefono" class="from-label">Teléfono</label>
+            <input type="text" name="id" id="txtTelefono" class="form-control" [(ngModel)]="usuario.telefono">
+        </div>
+        <div class="col-md-3">
+            <label for="txtPais" class="from-label">País</label>
+            <input type="text" name="id" id="txtPais" class="form-control" [(ngModel)]="usuario.idPaisResidencia">
+        </div>
+        <div class="col-md-3">
+            <label for="txtRecibirInformacion" class="from-label">Recibe Información</label>
+            <input type="text" name="id" id="txtRecibirInformacion" class="form-control"
+                [(ngModel)]="usuario.recibirInformacion">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <button class="btn btn-success" type="button" (click)="onAddUsuario(usuario)">Agregar</button>
+            <button class="btn btn-warning m-2" type="button" (click)="onUpdateUsuario(usuario)">Modificar</button>
+            <button class="btn btn-danger" type="button" (click)="onDeleteUsuario(usuario.id)">Eliminar</button>
+            <button class="btn btn-primary m-2" type="button" (click)="clear()">Limpiar</button>
+        </div>
+
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <table id="dtusuario" class="table table-striped" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Seleccionar</th>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Teléfono</th>
+                        <th>País</th>
+                        <th>Recibe Información</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of datatable">
+                        <td><input type="button" value="Seleccionar" (click)="onSetData(item)"></td>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.nombre }}</td>
+                        <td>{{ item.apelido }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.fechaNacimiento }}</td>
+                        <td>{{ item.telefono }}</td>
+                        <td>{{ item.idPaisResidencia }}</td>
+                        <td>{{ item.recibirInformacion }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

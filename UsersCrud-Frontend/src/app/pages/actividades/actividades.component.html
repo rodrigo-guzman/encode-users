@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Actividades</h2>
+
+    <div class="row mt-5">
+        <div class="col">
+            <table id="dtusuario" class="table table-striped" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Creada</th>
+                        <th>Usuario</th>
+                        <th>Actividad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of datatable">
+                        <td>{{ item.idActividad }}</td>
+                        <td>{{ item.createDate }}</td>
+                        <td>{{ item.idUsuario }}</td>
+                        <td>{{ item.actividad }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
